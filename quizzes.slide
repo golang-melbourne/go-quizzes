@@ -1,8 +1,35 @@
-Quiz
-30 July 2016
+Go Quizzes
+2nd August 2016
 Tags: golang quiz
 
 * Quiz 1 - Make it work https://play.golang.org/p/J1J4gmTzED
-.play snippets/quiz1.go
+.play snippets/quiz1/question/question.go /START OMIT/,/END OMIT/
 
 * Quiz 1 Solution
+.play snippets/quiz1/solution/solution.go /START OMIT/,/END OMIT/
+- when using `range`, `a` is allocated once at the beginning of the loop
+- it is re-used, so the address `&a` doesn't change
+.play snippets/quiz1/solution_debug/solution_debug.go /START OMIT/,/END OMIT/
+
+* Quiz 1 Alternative Solution
+.play snippets/quiz1/solution_2/solution_2.go /START OMIT/,/END OMIT/
+- in each loop, allocate a new location `b`
+- point to the new memory address
+- works, but in-efficient as allocates and copies `a` to `b`
+
+* Quiz 1 Affects slice of pointers...
+.play snippets/quiz1/no_pointers/no_pointers.go /START OMIT/,/END OMIT/
+
+* Quiz 2 - Make it work https://play.golang.org/p/mesQzrxgj1
+.play snippets/quiz2/question/question.go /START OMIT/,/END OMIT/
+
+* Quiz 2 Solution
+- issue because goroutines execute after loop
+- at the time of execution, `g` happens to be the last value
+- pass the right parameter to the goroutine, using an anonymous function
+.play snippets/quiz2/solution/solution.go /START OMIT/,/END OMIT/
+- create a new variable
+.play snippets/quiz2/solution_2/solution_2.go /START OMIT/,/END OMIT/
+
+* Quiz 2 Extra
+.play snippets/quiz2/extra/extra.go /START OMIT/,/END OMIT/

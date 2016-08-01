@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// START OMIT
+
 type Gopher struct {
 	Name string
 }
@@ -21,3 +23,5 @@ func main() {
 	fmt.Printf("Values:   %v %v %v\n", orig[0], orig[1], orig[2])
 	fmt.Printf("Pointers: %v %v %v\n", ptrs[0], ptrs[1], ptrs[2])
 }
+
+// END OMIT
